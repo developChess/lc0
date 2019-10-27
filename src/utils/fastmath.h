@@ -1,6 +1,6 @@
 /*
   This file is part of Leela Chess Zero.
-  Copyright (C) 2018 The LCZero Authors
+  Copyright (C) 2018-2019 The LCZero Authors
 
   Leela Chess is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -64,5 +64,8 @@ inline float FastPow2(const float a) {
 inline float FastLog(const float a) {
   return 0.6931471805599453f * FastLog2(a);
 }
+
+// Fast approximate exp(x). Does only limited range checking.
+inline float FastExp(const float a) { return FastPow2(1.442695040f * a); }
 
 }  // namespace lczero
